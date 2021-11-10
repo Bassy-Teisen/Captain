@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_001159) do
+ActiveRecord::Schema.define(version: 2021_11_10_013155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boats", force: :cascade do |t|
+    t.string "category", limit: 50
+    t.string "size", limit: 50
+    t.string "capasity", limit: 50
+    t.string "activity", limit: 100
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "name", limit: 50
